@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RK Public — The Voice of the People</title>
+    <title>My First Article Title - RK Public</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -340,82 +340,10 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* --- 8. Featured News Slider --- */
-        .featured-slider {
-            position: relative;
-            width: 100%;
-            max-width: 1200px; /* Match container, but can be full-width */
-            margin: 1.5rem auto;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
+        /* --- 8. Featured News Slider (REMOVED FOR ARTICLE PAGE) --- */
         
-        .slides-container {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            flex-shrink: 0;
-            width: 100%;
-            position: relative;
-        }
-        
-        .slide img {
-            width: 100%;
-            height: 500px; /* Fixed height for consistency */
-            object-fit: cover;
-        }
-
-        .slide-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-            padding: 3rem 2rem 2rem;
-            color: var(--color-white);
-        }
-
-        .slide-caption h3 {
-            font-size: 2.25rem;
-            color: var(--color-white);
-            margin: 0;
-        }
-        
-        .slide-caption h3 a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        .slide-caption h3 a:hover,
-        .slide-caption h3 a:focus {
-            color: var(--color-yellow);
-            text-decoration: underline;
-        }
-        
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(30, 58, 95, 0.7);
-            color: var(--color-white);
-            border: none;
-            font-size: 2rem;
-            font-weight: 900;
-            padding: 0.5rem 1rem;
-            z-index: 10;
-        }
-        
-        .slider-btn:hover,
-        .slider-btn:focus {
-            background-color: var(--color-deep-red);
-        }
-
-        .slider-btn.prev { left: 10px; }
-        .slider-btn.next { right: 10px; }
-        
-        /* --- 9. Main 3-Column Layout --- */
+        /* --- 9. Main Layout --- */
+        /* This rule is from the homepage, we will override it below */
         .main-content {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
@@ -438,7 +366,7 @@
             top: 20px; /* Stick below a potential sticky header */
             align-self: start; /* Important for sticky */
         }
-        
+
         /* --- 10. Reusable News Card Components --- */
         .news-card {
             background-color: var(--color-white);
@@ -535,88 +463,9 @@
             line-height: 1.4;
         }
 
-        /* --- 11. Category Sections --- */
-        .category-section {
-            margin-bottom: 2rem;
-        }
+        /* --- 11. Category Sections (REMOVED FOR ARTICLE PAGE) --- */
+        /* --- 12. Opinion Section (REMOVED FOR ARTICLE PAGE) --- */
         
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .category-grid .news-card {
-            border: 1px solid #eee;
-            padding: 0;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .category-grid .news-card:hover,
-        .category-grid .news-card:focus-within {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .category-grid .news-card img {
-            margin: 0;
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .category-grid .card-content {
-            padding: 1rem;
-        }
-        
-        .category-grid .news-card h4 {
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        /* --- 12. Opinion Section --- */
-        .opinion-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .opinion-card {
-            background-color: var(--color-white);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-sm);
-            border-top: 4px solid var(--color-navy);
-        }
-
-        .opinion-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .opinion-author img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .opinion-author h5 {
-            margin: 0;
-            color: var(--color-deep-red);
-        }
-        
-        .opinion-author span {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .opinion-card h4 {
-            font-size: 1.2rem;
-        }
-
         /* --- 13. Newsletter Block --- */
         .newsletter-block {
             background: linear-gradient(105deg, var(--color-navy) 0%, var(--color-deep-red) 100%);
@@ -755,13 +604,15 @@
             .latest-news { grid-area: latest; }
             .top-stories { grid-area: top; }
             .sidebar-most-read { grid-area: sidebar; }
-
+            
+            /* Homepage-only rules from original */
             .category-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .opinion-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -818,13 +669,7 @@
                 border-bottom-color: #eee; /* Remove red border on mobile */
             }
 
-            .slide img {
-                height: 350px;
-            }
-            .slide-caption h3 {
-                font-size: 1.75rem;
-            }
-            
+            /* Homepage-only rule from original */
             .main-content {
                 grid-template-columns: 1fr;
                 grid-template-areas:
@@ -837,6 +682,7 @@
                 position: static; /* Disable sticky on mobile */
             }
             
+            /* Homepage-only rule from original */
             .opinion-grid {
                 grid-template-columns: 1fr;
             }
@@ -855,21 +701,7 @@
                 margin-right: 0.5rem;
             }
 
-            .slide img {
-                height: 250px;
-            }
-            .slide-caption {
-                padding: 2rem 1rem 1rem;
-            }
-            .slide-caption h3 {
-                font-size: 1.4rem;
-            }
-            
-            .slider-btn {
-                font-size: 1.5rem;
-                padding: 0.25rem 0.75rem;
-            }
-
+            /* Homepage-only rules from original */
             .category-grid {
                 grid-template-columns: 1fr;
             }
@@ -883,6 +715,77 @@
                 gap: 0.75rem;
             }
         }
+
+
+        /* ========================================
+        --- NEW STYLES FOR ARTICLE PAGE ---
+        ========================================
+        */
+
+        .article-content {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr; /* Main content column and a sidebar */
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-body h1 {
+            font-size: 2.75rem;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .article-meta span {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .article-meta strong {
+            color: var(--color-text);
+        }
+
+        .article-body .featured-image {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .article-body p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body blockquote {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 4px solid var(--color-deep-red);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* --- Article Page Responsive --- */
+        @media (max-width: 768px) {
+            .article-content {
+                grid-template-columns: 1fr; /* Stack article and sidebar */
+            }
+            .article-body h1 {
+                font-size: 2rem;
+            }
+            .article-body p {
+                font-size: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -915,7 +818,7 @@
                 <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu">
                     &#9776; </button>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">India</a></li>
                     <li><a href="#">World</a></li>
                     <li><a href="#">Politics</a></li>
@@ -953,86 +856,31 @@
         </div>
     </section>
 
-    <section class="featured-slider" id="featured-slider" aria-roledescription="carousel" aria-label="Featured News">
-        <div class="slides-container" id="slides-container">
-            <article class="slide" role="group" aria-label="slide 1 of 3">
-                <img src="https://picsum.photos/seed/parliament/1200/500" alt="Indian Parliament building">
-                <div class="slide-caption">
-                    <h3><a href="#">Parliament Session Begins: Key Bills on Agenda as Opposition Plans Strategy</a></h3>
-                </div>
-            </article>
-            <article class="slide" role="group" aria-label="slide 2 of 3">
-                <img src="https://picsum.photos/seed/cricket/1200/500" alt="A crowded cricket stadium">
-                <div class="slide-caption">
-                    <h3><a href="#">India vs. Australia: Sharma hits century in thrilling ODI series opener</a></h3>
-                </div>
-            </article>
-            <article class="slide" role="group" aria-label="slide 3 of 3">
-                <img src="https://picsum.photos/seed/economy/1200/500" alt="Stock market charts on a screen">
-                <div class="slide-caption">
-                    <h3><a href="#">RBI holds repo rate steady amid inflation concerns, projects 6.5% GDP growth</a></h3>
-                </div>
-            </article>
-        </div>
-        <button class="slider-btn prev" id="slider-prev" aria-label="Previous Slide">&#10094;</button>
-        <button class="slider-btn next" id="slider-next" aria-label="Next Slide">&#10095;</button>
-    </section>
-
-    <main class="container main-content">
+    <main class="container article-content">
         
-        <section class="latest-news" aria-labelledby="latest-heading">
-            <h2 class="section-heading" id="latest-heading">Latest News</h2>
-            
-            <article class="news-card large-card">
-                <img src="https://picsum.photos/seed/techconf/800/450" alt="A busy technology conference">
-                <h4><a href="#">Global Tech Summit 2025: AI and Quantum Computing take center stage in Bengaluru</a></h4>
-                <p>Thousands of developers, CEOs, and innovators have gathered for the annual summit to discuss the future of technology and its impact on global industries.</p>
-            </article>
-            
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/supremecourt/800/450" alt="India's Supreme Court building">
-                <h4><a href="#">Supreme Court delivers landmark judgment on data privacy laws</a></h4>
-                <p>The 5-judge bench ruled on the constitutionality of the new digital privacy act, setting a new precedent for user data protection in the country.</p>
-            </article>
+        <article class="article-body">
+            <h1>My First Article Title: Edit This Headline</h1>
 
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/train/800/450" alt="A high-speed Vande Bharat train">
-                <h4><a href="#">New Vande Bharat Express route to connect Mumbai and Ahmedabad in under 4 hours</a></h4>
-                <p>The new semi-high-speed train was flagged off today, promising to reduce travel time significantly between the two major economic hubs.</p>
-            </article>
-        </section>
+            <div class="article-meta">
+                <span>By <strong>Your Name Here</strong></span>
+                <span>Published on October 24, 2025</span>
+            </div>
 
-        <section class="top-stories" aria-labelledby="top-stories-heading">
-            <h2 class="section-heading" id="top-stories-heading">Top Stories</h2>
-            
-            <article class="news-card small-card">
-                <img src="https://picsum.photos/seed/diplomacy/100/75" alt="Two diplomats shaking hands">
-                <div class="card-content">
-                    <h5><a href="#">India-US strategic dialogue focuses on trade and defense cooperation.</a></h5>
-                </div>
-            </article>
-            
-            <article class="news-card small-card">
-                <img src="https://picsum.photos/seed/bollywood/100/75" alt="Bollywood movie poster">
-                <div class="card-content">
-                    <h5><a href="#">New Bollywood epic breaks opening weekend box office records.</a></h5>
-                </div>
-            </article>
+            <img src="https://picsum.photos/seed/article1/800/450" alt="Placeholder image description" class="featured-image">
 
-            <article class="news-card small-card">
-                <img src="https://picsum.photos/seed/monsoon/100/75" alt="Farmer in a field during monsoon">
-                <div class="card-content">
-                    <h5><a href="#">Monsoon covers entire country 3 days ahead of schedule, says IMD.</a></h5>
-                </div>
-            </article>
+            <p>This is the first paragraph of your new article. You can replace this text with your own content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             
-            <article class="news-card small-card">
-                <img src="https://picsum.photos/seed/startup/100/75" alt="People in a startup office">
-                <div class="card-content">
-                    <h5><a href="#">Indian startup raises $100M in Series C funding for its EV battery tech.</a></h5>
-                </div>
-            </article>
-        </section>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+            <blockquote>
+                This is a blockquote. It's useful for highlighting a key quote or a powerful statement within your article.
+            </blockquote>
+            
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+
+        </article>
         
         <aside class="sidebar-most-read" aria-labelledby="most-read-heading">
             <h2 class="section-heading" id="most-read-heading">Most Read</h2>
@@ -1046,105 +894,6 @@
         </aside>
 
     </main>
-    
-    <section class="category-section container" aria-labelledby="politics-heading">
-        <h2 class="section-heading" id="politics-heading">Politics</h2>
-        <div class="category-grid">
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/election/400/180" alt="Election rally">
-                <div class="card-content">
-                    <h4><a href="#">State assembly elections: Polling percentages see record turnout.</a></h4>
-                </div>
-            </article>
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/debate/400/180" alt="Political debate">
-                <div class="card-content">
-                    <h4><a href="#">Exclusive: Finance Minister on the new GST reforms.</a></h4>
-                </div>
-            </article>
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/government/400/180" alt="Government building">
-                <div class="card-content">
-                    <h4><a href="#">Cabinet approves new infrastructure projects worth 50,000 Cr.</a></h4>
-                </div>
-            </article>
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/protest/400/180" alt="A peaceful protest">
-                <div class="card-content">
-                    <h4><a href="#">Farmers' unions to hold talks with central committee next week.</a></h4>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="category-section container" aria-labelledby="sports-heading">
-        <h2 class="section-heading" id="sports-heading">Sports</h2>
-        <div class="category-grid">
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/badminton/400/180" alt="Badminton player">
-                <div class="card-content">
-                    <h4><a href="#">Sindhu enters final of All England Open after stunning semi-final win.</a></h4>
-                </div>
-            </article>
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/football/400/180" alt="Football match">
-                <div class="card-content">
-                    <h4><a href="#">ISL Final: Mumbai City FC to face ATK Mohun Bagan in title clash.</a></h4>
-                </div>
-            </article>
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/hockey/400/180" alt="Hockey game">
-                <div class="card-content">
-                    <h4><a href="#">Indian Men's Hockey team beats Germany 3-1 in Pro League.</a></h4>
-                </div>
-            </article>
-            <article class="news-card">
-                <img src="https://picsum.photos/seed/chess/400/180" alt="Chess board">
-                <div class="card-content">
-                    <h4><a href="#">Praggnanandhaa holds World No. 1 to a draw in Candidates tournament.</a></h4>
-                </div>
-            </article>
-        </div>
-    </section>
-    
-    <section class="opinion-section bg-light-gray" aria-labelledby="opinion-heading">
-        <div class="container">
-            <h2 class="section-heading" id="opinion-heading">Opinion</h2>
-            <div class="opinion-grid">
-                <article class="opinion-card">
-                    <div class="opinion-author">
-                        <img src="https://picsum.photos/seed/woman1/60/60" alt="Portrait of Priya Sharma">
-                        <div>
-                            <h5>Priya Sharma</h5>
-                            <span>Senior Editor</span>
-                        </div>
-                    </div>
-                    <h4><a href="#">The AI Revolution: Are we asking the right questions about our future?</a></h4>
-                </article>
-                <article class="opinion-card">
-                    <div class="opinion-author">
-                        <img src="https://picsum.photos/seed/man1/60/60" alt="Portrait of Rohan Gupta">
-                        <div>
-                            <h5>Rohan Gupta</h5>
-                            <span>Policy Analyst</span>
-                        </div>
-                    </div>
-                    <h4><a href="#">Urban Chaos: Why Indian cities need a radical new plan for public transport.</a></h4>
-                </article>
-                <article class="opinion-card">
-                    <div class="opinion-author">
-                        <img src="https://picsum.photos/seed/person3/60/60" alt="Portrait of Anjali Desai">
-                        <div>
-                            <h5>Anjali Desai</h5>
-                            <span>Foreign Correspondent</span>
-                        </div>
-                    </div>
-                    <h4><a href="#">Beyond the Headlines: The shifting sands of global diplomacy in Asia.</a></h4>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <section class="newsletter-block">
         <div class="container">
             <h3>Subscribe to Our Newsletter</h3>
@@ -1252,80 +1001,13 @@
                         tickerList.style.animationPlayState = 'running';
                     });
                 }
-            } catch (e) {
+            } catch (e)
+             {
                 console.error("Error setting up ticker:", e);
             }
 
-            // --- 4. Featured News Slider ---
-            try {
-                const slider = document.getElementById('featured-slider');
-                const slidesContainer = document.getElementById('slides-container');
-                const slides = document.querySelectorAll('.slide');
-                const prevBtn = document.getElementById('slider-prev');
-                const nextBtn = document.getElementById('slider-next');
-                
-                if (slider && slidesContainer && slides.length > 0 && prevBtn && nextBtn) {
-                    let currentSlide = 0;
-                    const totalSlides = slides.length;
-                    let slideInterval;
-
-                    function goToSlide(slideIndex) {
-                        if (slideIndex < 0) {
-                            currentSlide = totalSlides - 1;
-                        } else if (slideIndex >= totalSlides) {
-                            currentSlide = 0;
-                        } else {
-                            currentSlide = slideIndex;
-                        }
-                        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-                    }
-
-                    function nextSlide() {
-                        goToSlide(currentSlide + 1);
-                    }
-
-                    function prevSlide() {
-                        goToSlide(currentSlide - 1);
-                    }
-
-                    function startSlider() {
-                        stopSlider(); // Clear any existing interval
-                        slideInterval = setInterval(nextSlide, 5000); // Auto-rotate every 5 seconds
-                    }
-
-                    function stopSlider() {
-                        clearInterval(slideInterval);
-                    }
-
-                    // Event Listeners
-                    nextBtn.addEventListener('click', () => {
-                        nextSlide();
-                        stopSlider(); // Stop auto-rotate on manual click
-                    });
-
-                    prevBtn.addEventListener('click', () => {
-                        prevSlide();
-                        stopSlider(); // Stop auto-rotate on manual click
-                    });
-                    
-                    // Pause on hover
-                    slider.addEventListener('mouseenter', stopSlider);
-                    slider.addEventListener('mouseleave', startSlider);
-
-                    // Keyboard accessibility for slider buttons
-                    [prevBtn, nextBtn].forEach(btn => {
-                        btn.addEventListener('focus', stopSlider);
-                        btn.addEventListener('blur', startSlider);
-                    });
-
-                    // Start the slider
-                    goToSlide(0);
-                    startSlider();
-                }
-            } catch (e) {
-                console.error("Error setting up slider:", e);
-            }
-
+            // --- 4. Featured News Slider (REMOVED as it's not on this page) ---
+            
             // --- 5. Newsletter Subscription Form ---
             try {
                 const newsletterForm = document.getElementById('newsletter-form');
