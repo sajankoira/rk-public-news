@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RK Public — The Voice of the People</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-red: #c8102e;
+      --muted: #6b6b6b;
+      --max-width: 1180px;
+      --text: #111;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.45;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    /* === Topbar === */
+    .topbar {
+      background: var(--brand-red);
+      color: #fff;
+      font-size: 13px;
+      padding: 6px 12px;
+    }
+    .topbar .inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .date { white-space: nowrap; opacity: .9; }
+    .ticker {
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      height: 1.1em;
+      min-width: 140px;
+    }
+    .ticker .track {
+      position: absolute;
+      left: 100%;
+      white-space: nowrap;
+      animation: tickerMove 18s linear infinite;
+      font-weight: 600;
+    }
+    @keyframes tickerMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-120%); }
+    }
+    .socials { display: flex; gap: 10px; }
+    .socials a { color: #fff; font-weight: 700; }
+
+    /* === Header === */
+    header {
+      border-bottom: 1px solid #e9e9e9;
+      background: #fff;
+    }
+    .brand {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 12px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: Merriweather, Georgia, serif;
+      font-weight: 900;
+      font-size: 34px;
+      color: var(--text);
+      line-height: 1;
+    }
+    .tagline {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .contact {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* === Navigation === */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-top: 4px solid var(--brand-red);
+      border-bottom: 1px solid #efefef;
+      z-index: 10;
+    }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10px 12px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .nav-links a:hover { color: var(--brand-red); }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 18px;
+    }
+
+    /* === Layout === */
+    main {
+      max-width: var(--max-width);
+      margin: 24px auto;
+      padding: 0 12px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+    }
+    .featured img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .featured h1 {
+      font-family: Merriweather, serif;
+      font-size: 28px;
+      margin: 10px 0 4px;
+    }
+    .kicker {
+      color: var(--brand-red);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .card h3 {
+      font-family: Merriweather, serif;
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    /* === Sidebar === */
+    aside {
+      background: #fbfbfb;
+      padding: 14px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      height: fit-content;
+    }
+    aside h4 { margin: 0 0 8px; font-size: 15px; }
+    aside li { margin-bottom: 8px; }
+
+    /* === Footer === */
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 28px 12px;
+      margin-top: 28px;
+    }
+    footer a { color: #fff; opacity: .95; }
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .copyright {
+      text-align: center;
+      opacity: .7;
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 760px) {
+      .menu-btn { display: inline-block; }
+      .nav-links { display: none; flex-direction: column; width: 100%; }
+      .nav-links.open { display: flex; }
+      main { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="inner">
+      <div class="date" id="top-date">Loading date…</div>
+      <div class="ticker"><div class="track">Breaking: RK Public launches community-driven reporting • Latest: Local elections updates • Exclusive: Voices from the field</div></div>
+      <div class="socials"><a href="#">FB</a><a href="#">X</a><a href="#">IG</a></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div>
+        <div class="logo">RK Public</div>
+        <div class="tagline">The Voice of the People</div>
+      </div>
+      <div class="contact">Contact: newsroom@rkpublic.example</div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <button class="menu-btn" id="menu-btn">☰ Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">India</a>
+        <a href="#">World</a>
+        <a href="#">Business</a>
+        <a href="#">Politics</a>
+        <a href="#">Technology</a>
+        <a href="#">Opinion</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Layout -->
+  <main>
+    <section>
+      <div class="featured">
+        <div class="kicker">Top Story</div>
+        <img src="https://picsum.photos/1200/600?random=1" alt="">
+        <h1>Community-driven reporting takes root: how citizens are shaping local news</h1>
+        <p class="meta">By Editorial Desk • Oct 23, 2025</p>
+        <p>RK Public’s new initiative enables on-the-ground contributors to file verified reports — connecting communities and improving transparency.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <img src="https://picsum.photos/600/350?random=2" alt="">
+          <h3>Municipal polls: what the numbers tell us</h3>
+          <p class="meta">Politics • Oct 23, 2025</p>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/600/350?random=3" alt="">
+          <h3>Startup funding: new wave in tier-2 cities</h3>
+          <p class="meta">Economy • Oct 23, 2025</p>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/600/350?random=4" alt="">
+          <h3>How farmers are using tech to forecast yields</h3>
+          <p class="meta">Agriculture • Oct 22, 2025</p>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/600/350?random=5" alt="">
+          <h3>Opinion: Media literacy in classrooms</h3>
+          <p class="meta">Opinion • Oct 21, 2025</p>
+        </article>
+      </div>
+    </section>
+
+    <aside>
+      <h4>Trending</h4>
+      <ul>
+        <li><a href="#">Live: Counting updates from city X</a></li>
+        <li><a href="#">Profiles: Women changemakers in tech</a></li>
+        <li><a href="#">Explainer: New agricultural policy</a></li>
+        <li><a href="#">Culture: Festival photo essay</a></li>
+      </ul>
+      <hr>
+      <h4>Most Read</h4>
+      <ul>
+        <li><a href="#">How local governance affects daily life</a></li>
+        <li><a href="#">Budget 2025 highlights</a></li>
+        <li><a href="#">Guide: Rainwater harvesting at home</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div style="max-width:480px">
+        <strong>About RK Public</strong>
+        <p style="color:#ddd;font-size:14px;">RK Public is a community-driven news platform giving voice to local citizens — covering politics, economy, culture and more.</p>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <div><a href="#">About</a><br><a href="#">Privacy Policy</a><br><a href="#">Contact</a></div>
+      </div>
+      <div>
+        <strong>Follow</strong>
+        <div><a href="#">Facebook</a><br><a href="#">X</a><br><a href="#">Instagram</a></div>
+      </div>
+    </div>
+    <div class="copyright">© 2025 RK Public — The Voice of the People.</div>
+  </footer>
+
+  <script>
+    // Date
+    const d = new Date();
+    document.getElementById('top-date').textContent =
+      d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+
+    // Mobile menu toggle
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav-links');
+    btn.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
